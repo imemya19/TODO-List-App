@@ -1,15 +1,21 @@
+const { urlencoded } = require('express');
 const express = require('express');
 const app = express();;
-const port = 8000;
+const port = 5000;
 
 
-
+//setting up ejs as our default template engine
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+//middlewares
 app.use('/', require('./routes'));
+app.use(express.urlencoded());
 
 
+
+
+//telling the server to listen to the port
 app.listen(port, function(err) {
 
     if (err) {
