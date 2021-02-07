@@ -1,0 +1,29 @@
+{
+    "name": "todo-list-app",
+    "version": "1.0.0",
+    "description": "This is the todo list app i'm making as apart of my mini project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/imemya19/TODO-List-App.git"
+    },
+    "keywords": [
+        "todo",
+        "tracker",
+        "tasks"
+    ],
+    "author": "somya",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/imemya19/TODO-List-App/issues"
+    },
+    "homepage": "https://github.com/imemya19/TODO-List-App#readme",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.1"
+    }
+}
