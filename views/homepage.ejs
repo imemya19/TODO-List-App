@@ -34,9 +34,28 @@
 
 
     <!-- LIST OF TASKS ADDED -->
+    <h1> List of tasks added </h1>
     <div id="outer">
 
-        for loop
+        <%for(let i of task_list){ %>
+
+            <div id="inner">
+                <input type="checkbox">
+                <p>Tak is:
+                    <%= i.description %>
+                </p>
+                <p>Category is:
+                    <%= i.category %>
+                </p>
+                <p>Due date is:
+                    <%= i.duedate %>
+                </p>
+
+                </input>
+
+            </div>
+
+            <%   } %>
     </div>
 </body>
 

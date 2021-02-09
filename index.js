@@ -1,9 +1,10 @@
-const { urlencoded } = require('express');
 const express = require('express');
+const path = require('path');
+
 const app = express();;
 const port = 5000;
 
-
+const db = require('./config/mongoose');
 //setting up ejs as our default template engine
 app.set('view engine', 'ejs');
 app.set('views', 'views');
