@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
 
 <head>
@@ -7,56 +7,88 @@
     <title>
         <%= title %>
     </title>
+
+    <link href="/css/homepage.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>TODO App</h1>
+
+    <div id="app">
 
 
-    <!-- add /delete buttons -->
-    <div>
-        <form action="/add-task/" method="post">
-            <!-- description -->
-            <label>Description</label>
-            <input type="text" name="desc" placeholder="What do you need to do" required>
+        <h1 id="head">TODO App</h1>
 
-            <!-- category -->
-            <label>Category</label>
-            <input type="text" name="category" placeholder="What do you need to do" required>
 
-            <!-- due date -->
-            <label>Category</label>
-            <input type="date" name="date" placeholder="What do you need to do" required>
+        <!-- add /delete buttons -->
+        <div>
+            <form action="/add-task/" method="post">
+                <!-- description -->
+                <div>
+                    <label>Description</label>
+                    <br>
+                    <input type="text" name="desc" placeholder="What do you need to do" required>
+                </div>
 
-            <button type="submit">ADD TASK</button>
-        </form>
+                <!-- category -->
+                <div>
+                    <label>Category</label><br>
+                    <input type="text" name="category" placeholder="What is the category?" required>
+                </div>
+
+
+                <!-- due date -->
+
+                <div>
+                    <label>Due Date</label>
+                    <br>
+                    <input type="date" name="date" placeholder="dd/mm/yyyy" required>
+                </div>
+
+
+                <button id="add-task-btn" type="submit">ADD TASK</button>
+
+            </form>
+        </div>
+
+
+        <!-- LIST OF TASKS ADDED -->
+        <h2> List of tasks added </h2>
+        <button id="del-task-btn" type="submit">DELETE TASK</button>
+
+        <div id="outer">
+
+            <%for(let i of task_list){ %>
+
+                <div id="inner">
+                    <input type="checkbox" class="checkbox-input" id="new-task-<%=i%>" name="task-details" class='strikethrough'>
+                    <label class='checkbox-label' for="new-task-<%=i%>">
+                    <div>
+                        <p>Task is:
+                            <%= i.description %>
+                        </p>
+                        <p>Category is:
+                            <%= i.category %>
+                        </p>
+                        <p>Due date is:
+                            <%= i.duedate %>
+                        </p>
+                    </div>
+                    </label>
+
+                </div>
+
+                <%   } %>
+        </div>
+
+
+
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <!-- including our js -->
+        <script src="/js/homepage.js"></script>
     </div>
 
 
-    <!-- LIST OF TASKS ADDED -->
-    <h1> List of tasks added </h1>
-    <div id="outer">
-
-        <%for(let i of task_list){ %>
-
-            <div id="inner">
-                <input type="checkbox">
-                <p>Tak is:
-                    <%= i.description %>
-                </p>
-                <p>Category is:
-                    <%= i.category %>
-                </p>
-                <p>Due date is:
-                    <%= i.duedate %>
-                </p>
-
-                </input>
-
-            </div>
-
-            <%   } %>
-    </div>
 </body>
 
 </html>
