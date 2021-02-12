@@ -10,4 +10,5 @@ router.get('/home', HomeController.home);
 router.use('/add-task', require('./add_task'));
 // console.log('in index router');
 
+router.use('/del-task', require('./delete_task'));
 module.exports = router;

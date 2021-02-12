@@ -12,7 +12,7 @@ body {
 
 #app {
     background-color: white;
-    width: 50%;
+    width: 80%;
 }
 
 .checkbox-input:checked+.checkbox-label {

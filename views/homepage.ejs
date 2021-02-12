@@ -53,15 +53,17 @@
 
         <!-- LIST OF TASKS ADDED -->
         <h2> List of tasks added </h2>
-        <button id="del-task-btn" type="submit">DELETE TASK</button>
+
 
         <div id="outer">
 
             <%for(let i of task_list){ %>
 
                 <div id="inner">
-                    <input type="checkbox" class="checkbox-input" id="new-task-<%=i%>" name="task-details" class='strikethrough'>
-                    <label class='checkbox-label' for="new-task-<%=i%>">
+
+                    <input type="checkbox" class="checkbox-input" id="<%=i%>" name="task-details">
+                    <label class='checkbox-label' for="<%=i%>">
+
                     <div>
                         <p>Task is:
                             <%= i.description %>
@@ -74,7 +76,9 @@
                         </p>
                     </div>
                     </label>
-
+                    <form action="/del-task/?id=<%= i.id %>" method="post">
+                        <button id="del-task-btn">DELETE TASK</button>
+                    </form>
                 </div>
 
                 <%   } %>
